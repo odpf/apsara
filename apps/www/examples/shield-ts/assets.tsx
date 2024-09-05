@@ -137,7 +137,7 @@ export const Assets = () => {
 };
 
 const AssetsHeader = () => {
-  const { filteredColumns, table } = useTable();
+  const { filteredColumns } = useTable();
   const isFiltered = filteredColumns.length > 0;
   return (
     <Flex
@@ -149,7 +149,7 @@ const AssetsHeader = () => {
         <Text style={{ fontWeight: 500 }}>Assets</Text>
       </Flex>
       <Flex gap="small">
-        <AssetsFooter />
+        <SelectionCount />
         {isFiltered ? <DataTable.ClearFilter /> : <DataTable.FilterOptions />}
         <DataTable.ViewOptions />
         <DataTable.GloabalSearch placeholder="Search assets..." />
@@ -158,7 +158,7 @@ const AssetsHeader = () => {
   );
 };
 
-const AssetsFooter = () => {
+const SelectionCount = () => {
   const { table } = useTable();
 
   return (
