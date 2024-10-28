@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import dayjs from "dayjs";
+import { PlusIcon, BlendingModeIcon } from "@radix-ui/react-icons";
 import {
   ApsaraColumnDef,
   Avatar,
@@ -137,7 +138,7 @@ export const Assets = () => {
 };
 
 const AssetsHeader = () => {
-  const { filteredColumns, table } = useTable();
+  const { filteredColumns } = useTable();
   const isFiltered = filteredColumns.length > 0;
   return (
     <Flex
